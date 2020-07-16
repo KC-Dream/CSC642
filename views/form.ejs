@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Kevin's Survey!</title>
+        
+        <meta http-equiv="Content-Language" content="en-us">
+        <meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+        <meta name="ProgId" content="FrontPage.Editor.Document">
+        <meta http-equiv="Content-Type" content="text/html; charset=windows-1256">
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+        
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+
+        <!-- <link rel="stylesheet" href="../public/stylesheets/styles.css"> -->
+
+    </head>
+
+    <body>
+
+        <div class="container-fluid-nav text-center survey-navbar">
+            
+            <a class="navbar-brand navbar-dark" href="#">CSC 642 Summer 2020 Individual Assignment Kevin Zhou</a>
+            
+        </div>
+
+        <div class="survey-title">
+            <p>Data Survey Form</p>
+        </div>
+        
+       
+
+        <form id="survey-form" action="/submit" method="post">
+
+            <div class="container">
+
+            
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" name="firstname" id="firstname" placeholder="John" required>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Smith" required>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="address">Address</label>
+                      <input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" required>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" name="city" id="city" placeholder="San Francisco" required>
+                      </div>
+                      <div class="form-group col-md-4">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control" name="state" id="state" placeholder="CA" required>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label for="zip">Zip</label>
+                        <input type="text" class="form-control" name="zip" id="zip" placeholder="94118" minlength="5" maxlength="5" pattern="[0-9]*" required>
+                      </div>
+                    </div>
+
+                    <p class="birthday">Birthday</p>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                          <label for="month">Month</label>
+                          <input type="text" class="form-control" name="month" id="month" placeholder="12" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="day">Day</label>
+                            <input type="text" class="form-control" name="day" id="day" placeholder="25" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="year">year</label>
+                          <input type="text" class="form-control" name="year" id="year" placeholder="2020" required>
+                        </div>
+                      </div>
+
+                      <div class="form-group col-md-4">
+                        <label for="educationlevel">Education Level</label>
+                        <select id="educationlevel" name="educationlevel" class="form-control" required>
+                          <option selected></option>
+                          <option>High School</option>
+                          <option>College</option>
+                          <option>Graduate Studies</option>
+                          <option>Ph.D</option>
+                        </select>
+                      </div>
+
+                      <p class="birthday">Height</p>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                          <label for="feet">Feet</label>
+                          <input type="text" class="form-control" name="feet" id="feet" placeholder="5" required>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="inches">Inches</label>
+                            <input type="text" class="form-control" name="inches" id="inches" placeholder="3" required>
+                        </div>
+                        
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="phonenumber">Phone Number</label>
+                          <input type="text" class="form-control" name="phonenumber" id="phonenumber" placeholder="415-000-0000" minlength="7" maxlength="7"
+                           required>
+                        </div>
+                        
+                        
+                      </div>
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="test@gmail.com" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label for="confirmemail">Confirm Email</label>
+                    <input type="email" class="form-control" name="confirmemail" id="confirmemail" placeholder="test@gmail.com" required>
+                </div>
+
+                <div>
+                    <p>I have entered all valid information above. </p>
+                </div>
+
+                <div class="form-group form-check">
+                    <input type="checkbox" name="agreetoterms" class="fgreetoterms" id="agreetoterms" required>
+                    <label class="form-check-label" for="agreetoterms">Agree to the terms</label>
+                </div>
+
+                <!-- Google Captcha works below! -->
+
+                
+                <div class="row">
+                    <div class="wrapper">
+                        <div class="form-group col-md-6">
+                            <div class="g-recaptcha" data-sitekey="6Le-YqsZAAAAAEBSgaV3hBSm_CNTP-__6JzDhQOA" required></div>
+                        </div>
+                    </div>
+                </div>
+
+              
+
+                <div class="submit-button">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                
+                
+            </div>
+            
+
+
+        </form>
+
+    </body>
+
+    <script>
+    
+      
+
+      $(document).ready(function() {
+        $('#survey-form').bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                firstname: {
+                    validators: {
+                        stringLength: {
+                            max: 40
+                        },
+                        notEmpty: {
+                            message: ' Enter your First Name, max 40 characters. '
+                        }
+
+                    }
+                },
+                lastname: {
+                    validators: {
+                        stringLength: {
+                            max: 40
+                        },
+                        notEmpty: {
+                            message: ' Enter your Last Name, max 40 characters. '
+                        }
+                    }
+                },
+                address: {
+                    validators: {
+                        stringLength: {
+                            max: 40
+                        },
+                        notEmpty: {
+                            message: ' Enter your Address, max 40 characters. '
+                        }
+                    }
+                },
+                city: {
+                    validators: {
+                        stringLength: {
+                            max: 40
+                        },
+                        notEmpty: {
+                            message: ' Enter your City, max 40 characters. '
+                        }
+                    }
+                },
+                state: {
+                    validators: {
+                        stringLength: {
+                            max: 40
+                        },
+                        notEmpty: {
+                            message: ' Enter your State, max 40 characters. '
+                        }
+                    }
+                },
+                zip: {
+                    validators: {
+                        numeric: {
+                            message: ' This field should contain a number. '
+                        },
+                        stringLength: {
+                            max: 5
+                        },
+                        notEmpty: {
+                            message: ' Enter your Zip Code, max 5 characters. ' 
+                        }
+                    }
+                },
+                month: {
+                    validators: {
+                        numeric: {
+                            message: ' This field should contain a number. '
+                        },
+                        stringLength: {
+                            max: 2
+                        },
+                        notEmpty: {
+                            message: ' Enter your Month, max 2 characters '
+                        }
+                    }
+                },
+                day: {
+                    validators: {
+                        numeric: {
+                            message: ' This field should contain a number. '
+                        },
+                        stringLength: {
+                            max: 2
+                        },
+                        notEmpty: {
+                            message: ' Enter your Day, max 2 characters. '
+                        }
+                    }
+                },
+                year: {
+                    validators: {
+                        numeric: {
+                            message: ' This field should contain a number. '
+                        },
+                        stringLength: {
+                            max: 4
+                        },
+                        notEmpty: {
+                            message: ' Enter your Year, max 4 characters. '
+                        }
+                    }
+                },
+                educationlevel: {
+                    validators: {
+                        notEmpty: {
+                            message: ' Please select your educational level. '
+                        }
+                    }
+                },
+                feet: {
+                    validators: {
+                        numeric: {
+                            message: ' This field should contain a number. '
+                        },
+                        notEmpty: {
+                            message: ' Please enter your height in feet. '
+                        }
+                    }
+                },
+                inches: {
+                    validators: {
+                        numeric: {
+                            message: ' This field should contain a number. '
+                        },
+                        notEmpty: {
+                            message: ' Please enter your remaining height in inches. '
+                        }
+                    }
+                },
+
+                email: {
+                    validators: {
+                        notEmpty: {
+                            message: ' Please type your Email. '
+                        },
+                        emailAddress: {
+                            message: 'Please enter a valid email address. '
+                        }
+                    }
+                },
+                confirmemail: {
+                  validators: {
+                        notEmpty: {
+                            message: ' Make sure the emails are the same. '
+                        },
+                        identical: {
+                            field: 'email',
+                            message: ' Please re-enter your email. '
+                        }
+                    }
+                },
+                phonenumber: {
+                    validators: {
+                        numeric: {
+                            message: ' This field should contain a number. '
+                        },
+                        notEmpty: {
+                            message: ' Please enter your phone number. '
+                        }
+                    }
+                },
+                
+                
+                agreetoterms: {
+                    validators: {
+                        notEmpty: {
+                            message: ' Please agree to the terms and conditions. '
+                        }
+                    }
+                },
+            }
+        })
+    });
+
+    //Submit
+
+    $('input[type="submit"], input[type="button"], button').disable(false);
+
+    </script>
+
+    <style>
+      .container {
+      /*
+      padding-top: 5%;
+      padding-bottom: 5%;
+      */
+      margin-top: 2%;
+      margin-bottom: 5%;
+      padding-top: 2%;
+      padding-bottom: 2%;
+      border: 5px solid bisque;
+      }
+
+      .survey-navbar {
+          text-align: center;
+          background-color: navajowhite;
+
+          font-weight: bold;
+          
+      }
+
+      .birthday {
+          font-size: large;
+          font-weight: bold;
+      }
+
+      .submit-button {
+          text-align: center;
+          
+      }
+
+      .survey-title {
+          text-align: center;
+          margin-top: 2%;
+          font-weight: bold;
+          font-size: xx-large;
+          color: cornflowerblue;
+          ;
+      }
+
+      
+      
+    </style>
+
+
+</html>
+
